@@ -48,6 +48,32 @@ resetBtn.addEventListener("click", event => {
     revList.innerHTML = ""
 })
 
+peopleBtn.addEventListener("click", event => {
+        movies.forEach(movie => { 
+        let peopleList = movie.people
+        if(movie.id === selectMenu.value){
+            if(peopleList.includes('/people/')){
+                people.innerHTML =""
+                const peopleData = document.createElement("li")
+                peopleData.innerHTML = `No People Found`
+                people.append(peopleData)
+            }else {
+                people.innerHTML =""
+                peopleList.map(peopleUrl => {
+                    fetch(`https://resource-ghibli-api.onrender.com${peopleUrl}`)
+                    .then(response => response.json())
+                    .then(data => { 
+                        const peopleData = document.createElement("li")
+                        peopleData.innerHTML = `${data.name}`
+                        people.append(peopleData)
+                    }) 
+                    .catch (error => console.log(error))
+                })
+            }   
+        }
+    })
+})
+
 })
 .catch(error => console.log(error))
 
