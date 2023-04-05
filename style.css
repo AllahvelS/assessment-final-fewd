@@ -1,0 +1,81 @@
+body {
+    background-color: lavender;
+    font-style: monospace;
+}
+
+header{
+    width: 75%;
+    height: auto;
+    background-color: skyblue;
+
+}
+header img {
+    height: auto;
+}
+main {
+    margin-top: 20px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin-top: 20px;
+    width: 100%;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 5px;
+    margin-top: 10px;
+    background-color: skyblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+
+
+
+/* #reviews should have a display of block if the viewport width is greater than 500px and a display of none if the viewport is less than or equal to 500px. */
+@media (max-width <= 500px){
+#reviews{
+    display: none;
+}
+}
+
+@media (min-width: 501px){
+    #reviews{
+        display: block;
+    }
+}
