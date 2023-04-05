@@ -38,7 +38,10 @@ reviewBtn.addEventListener ("click", (event) => {
             }
         }
         if(selectMenu.value === ""){
-            window.alert("Please select a movie first")
+            window.alert("Please select a movie")
+        }
+        if(revInput.value === ""){
+            window.alert("Please input a review")
         }
     form.reset()
 }) 
