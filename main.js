@@ -30,19 +30,21 @@ selectMenu.addEventListener("change", (event) =>{
 reviewBtn.addEventListener ("click", (event) => {
     event.preventDefault()
     let review = revInput.value
+    if(review){
         for (const movie of movies) {
             if(movie.id === selectMenu.value){
-                let newReview = document.createElement("li")
-                newReview.innerHTML = `<strong>${movie.title}: </strong>${review}`
-                revList.append(newReview)
-            }
+                    let newReview = document.createElement("li")
+                    newReview.innerHTML = `<strong>${movie.title}: </strong>${review}`
+                    revList.append(newReview)
+                }
+            } 
+        } else if(revInput.value === ""){
+            window.alert("Please input a review")
         }
         if(selectMenu.value === ""){
             window.alert("Please select a movie")
         }
-        if(revInput.value === ""){
-            window.alert("Please input a review")
-        }
+        
     form.reset()
 }) 
 
